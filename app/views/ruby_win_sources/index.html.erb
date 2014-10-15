@@ -1,0 +1,29 @@
+<h1>Listing ruby_win_sources</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Author</th>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ruby_win_sources.each do |ruby_win_source| %>
+      <tr>
+        <td><%= ruby_win_source.name %></td>
+        <td><%= ruby_win_source.author %></td>
+        <td><%= ruby_win_source.url %></td>
+        <td><%= link_to 'Show', ruby_win_source %></td>
+        <td><%= link_to 'Edit', edit_ruby_win_source_path(ruby_win_source) %></td>
+        <td><%= link_to 'Destroy', ruby_win_source, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ruby win source', new_ruby_win_source_path %>

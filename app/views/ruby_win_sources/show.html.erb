@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ruby_win_source.name %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @ruby_win_source.author %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @ruby_win_source.url %>
+</p>
+
+<%= link_to 'Edit', edit_ruby_win_source_path(@ruby_win_source) %> |
+<%= link_to 'Back', ruby_win_sources_path %>
