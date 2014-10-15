@@ -1,0 +1,9 @@
+$("#ole_classes").html('<%= escape_javascript(render 'ole_classes') %>');
+$("#ole_class_ole_class").bind("change", function(event) {
+  $.ajax({
+    method: 'get',
+    url: '/ole_explorer/update_members',
+    data: { ole_class: $(this).val(), typelib: $('#typelib_typelib').val() },
+    dataType: 'script'
+  });
+});

@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'ole_explorer/index'
+  get "ole_explorer/update_classes"
+  get "ole_explorer/update_members"
+  get "ole_explorer/member_info"
+
   resources :ruby_win_sources
 
   # The priority is based upon order of creation: first created -> highest priority.

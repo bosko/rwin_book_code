@@ -1,0 +1,11 @@
+$("#ole_members").html('<%= escape_javascript(render 'ole_members') %>');
+$("#ole_member_ole_member").bind("change", function(event) {
+  $.ajax({
+    method: 'get',
+    url: '/ole_explorer/member_info',
+    data: { member: $(this).val(),
+            ole_class: $('#ole_class_ole_class').val(),
+            typelib: $('#typelib_typelib').val() },
+    dataType: 'script'
+  });
+});

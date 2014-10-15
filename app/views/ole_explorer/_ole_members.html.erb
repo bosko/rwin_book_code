@@ -1,0 +1,10 @@
+<% if @ole_members[:class] %>
+  <h3>Class Info</h3>
+
+  <p>Name: <b><%= @ole_members[:class].name %></b></p>
+  <p>GUID: <b><%= @ole_members[:class].guid %></b></p>
+  <p>ProgID: <b><%= @ole_members[:class].progid %></b></p>
+  <p>Desc: <b><%= @ole_members[:class].helpstring %></b></p>
+<% end %>
+<%= select("ole_member", "ole_member", @ole_members[:members],
+           {:prompt=>"Select OLE member"}) %>

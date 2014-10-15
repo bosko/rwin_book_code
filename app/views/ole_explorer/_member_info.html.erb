@@ -1,0 +1,34 @@
+<% unless @member.nil? %>
+  <h3>Member info</h3>
+  <% if @member.is_a? WIN32OLE_METHOD %>
+    <% if @member.event? %>
+      <p><i>Event</i></p>
+      <p>Event interface: <b><%= @member.event_interface %></b></p>
+    <% end %>
+    <p>Name: <b><%= @member.name %></b></p>
+    <p>Invoke: <b><%= @member.invoke_kind %></b></p>
+    <p>Returns: <b><%= @member.return_type %></b></p>
+    <p>Dispatch ID: <b><%= @member.dispid %></b></p>
+    <p>Help string: <b><%= @member.helpstring %></b></p>
+    <p><i>Arguments</i></p>
+    <table border="1">
+      <tr><th>Name</th><th>Type</th><th>Usage</th></tr>
+      <% @member.params.each do |param| %>
+        <tr>
+          <td><%= param.name %></td>
+          <td><%= param.ole_type %></td>
+          <% parinf = [] %>
+          <% parinf << "In" if param.input? %>
+          <% parinf << "Out" if param.output? %>
+          <% parinf << "Optional" if param.optional? %>
+          <td><%= parinf.join(',') %></td>
+        </tr>
+      <% end -%>
+    </table>
+  <% else %>
+    <p><i>Variable</i></p>
+    <p>Name: <b><%= @member.name %></b></p>
+    <p>Kind: <b><%= @member.variable_kind %></b></p>
+    <p>Type: <b><%= @member.ole_type %></b></p>
+  <% end %>
+<% end %>

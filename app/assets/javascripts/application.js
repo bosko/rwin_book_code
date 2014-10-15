@@ -14,3 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+  $("#typelib_typelib").bind("change", function(event) {
+    $.ajax({
+      method: 'get',
+      url: '/ole_explorer/update_classes',
+      data: { typelib: $(this).val() },
+      dataType: 'script'
+    });
+  });
+});

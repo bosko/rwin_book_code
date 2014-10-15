@@ -1,0 +1,14 @@
+<h1>OleExplorer</h1>
+<%= select "typelib", "typelib", @typelibs, {:prompt=>"Select Type Library"}  %>
+
+<div id="ole_classes">
+  <%= render :partial => 'ole_classes', :object => @ole_classes %>
+</div>
+
+<div id="ole_members">
+  <%= render :partial => 'ole_members' %>
+</div>
+
+<div id="member_info">
+  <%= render :partial => 'member_info', :object => @member %>
+</div>
